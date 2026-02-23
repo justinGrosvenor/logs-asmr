@@ -1,0 +1,52 @@
+from pathlib import Path
+
+APP_NAME = "Logs ASMR"
+APP_DIR = Path.home() / ".logs-asmr"
+DB_PATH = APP_DIR / "logs_asmr.db"
+LOG_DIR = APP_DIR / "logs"
+LOG_FILE = LOG_DIR / "logs_asmr.log"
+
+# Ring buffer
+RING_BUFFER_CAPACITY = 10_000
+
+# Log view
+MAX_LOG_LINES = 50_000
+
+# Event processor
+PROCESS_INTERVAL_MS = 100
+
+# Filter debounce
+FILTER_DEBOUNCE_MS = 300
+
+# UI defaults
+MIN_WINDOW_WIDTH = 1000
+MIN_WINDOW_HEIGHT = 650
+DEFAULT_SPLITTER_LEFT = 220
+DEFAULT_SPLITTER_RIGHT = 780
+
+# Audio
+CROSSFADE_DURATION_MS = 5000
+CROSSFADE_STEP_MS = 50
+ALARM_COOLDOWN_SECONDS = 30.0
+WARNING_COOLDOWN_SECONDS = 10.0
+ERROR_RATE_WINDOW_SECONDS = 10.0
+ERROR_RATE_ALARM_THRESHOLD = 1.0  # errors/sec for ALARM (thunderstorm)
+NIGHT_MODE_VOLUME_FACTOR = 0.5
+
+# Connector defaults
+LOG_GROUP_CACHE_TTL_SECONDS = 300.0
+MAX_RECONNECT_ATTEMPTS = 3
+RECONNECT_BACKOFF_SECONDS = 2.0
+
+# Component chips
+MAX_COMPONENT_CHIPS = 20
+
+# Repeated line collapse threshold
+REPEAT_COLLAPSE_THRESHOLD = 3
+
+# Keyring
+KEYRING_SERVICE = "logs_asmr"
+
+# Logging
+MAX_LOG_SIZE = 5 * 1024 * 1024  # 5 MB per file
+LOG_BACKUP_COUNT = 3
