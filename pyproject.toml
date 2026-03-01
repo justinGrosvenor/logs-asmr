@@ -24,21 +24,20 @@ classifiers = [
 dependencies = [
     "PyQt6>=6.7",
     "keyring>=25.7",
+    "boto3>=1.35",
+    "docker>=7.0",
+    "kubernetes>=28.0",
+    "google-cloud-logging>=3.8",
+    "websockets>=12.0",
+    "httpx>=0.27",
 ]
 
 [project.optional-dependencies]
-cloudwatch = ["boto3>=1.35"]
-docker = ["docker>=7.0"]
-kubernetes = ["kubernetes>=28.0"]
-gcp = ["google-cloud-logging>=3.8"]
-loki = ["websockets>=12.0", "httpx>=0.27"]
-all = ["logs-asmr[cloudwatch,docker,kubernetes,gcp,loki]"]
 dev = [
     "pytest>=8.0",
     "pytest-qt>=4.4",
     "ruff>=0.8",
     "pre-commit>=3.0",
-    "logs-asmr[all]",
 ]
 
 [project.scripts]

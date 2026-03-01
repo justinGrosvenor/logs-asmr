@@ -5,9 +5,7 @@ A desktop log streaming workspace with ambient audio that reacts to your error r
 ## Install
 
 ```bash
-pip install logs-asmr              # base install
-pip install "logs-asmr[cloudwatch]"  # with AWS CloudWatch support
-pip install "logs-asmr[all]"         # all log source connectors
+pip install logs-asmr
 ```
 
 ## Quick Start
