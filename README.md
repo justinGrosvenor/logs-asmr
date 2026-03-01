@@ -1,5 +1,10 @@
 # Logs ASMR
 
+[![PyPI](https://img.shields.io/pypi/v/logs-asmr)](https://pypi.org/project/logs-asmr/)
+[![Python](https://img.shields.io/pypi/pyversions/logs-asmr)](https://pypi.org/project/logs-asmr/)
+[![License](https://img.shields.io/github/license/justinGrosvenor/logs-asmr)](https://github.com/justinGrosvenor/logs-asmr/blob/main/LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/justinGrosvenor/logs-asmr/publish.yml)](https://github.com/justinGrosvenor/logs-asmr/actions)
+
 A desktop log streaming workspace with ambient audio that reacts to your error rate. Calm ocean waves when things are healthy, rain when errors trickle in, full thunderstorm when it hits the fan.
 
 ## Install
