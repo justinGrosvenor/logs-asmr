@@ -2,11 +2,18 @@
 
 A desktop log streaming workspace with ambient audio that reacts to your error rate. Calm ocean waves when things are healthy, rain when errors trickle in, full thunderstorm when it hits the fan.
 
+## Install
+
+```bash
+pip install logs-asmr              # base install
+pip install "logs-asmr[cloudwatch]"  # with AWS CloudWatch support
+pip install "logs-asmr[all]"         # all log source connectors
+```
+
 ## Quick Start
 
 ```bash
-pip install -e ".[dev]"
-python -m logs_asmr --fake   # demo mode with synthetic logs
+logs-asmr --fake   # demo mode with synthetic logs
 ```
 
 ## Log Sources
@@ -20,14 +27,6 @@ Connect to logs from multiple backends:
 - **Grafana Loki** — WebSocket streaming
 - **systemd journald** — system journal (Linux)
 - **File / stdin** — tail local files
-
-Each connector is optional — install only what you need:
-
-```bash
-pip install -e ".[cloudwatch]"   # just boto3
-pip install -e ".[docker]"       # just docker
-pip install -e ".[all]"          # everything
-```
 
 ## Audio
 
