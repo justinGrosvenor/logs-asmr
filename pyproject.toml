@@ -25,6 +25,7 @@ dependencies = [
     # Updated WebPKI roots after the October 2026 eMudhra compromise.
     "certifi>=2026.10.19",
     "grpcio>=1.84.1",
+    "opentelemetry-api>=1.45.1",
     "PyQt6>=6.7",
     "keyring>=25.7",
     "boto3>=1.35",
@@ -41,6 +42,7 @@ dev = [
     "pytest-qt>=4.4",
     "ruff>=0.8",
     "pre-commit>=3.0",
+    "virtualenv>=21.14.13",
 ]
 
 [project.scripts]
