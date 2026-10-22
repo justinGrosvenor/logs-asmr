@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import json
 import logging
-import time
+import ssl
 from typing import TYPE_CHECKING
+
+import certifi
 
 from logs_asmr.connectors.base import TailWorker
 from logs_asmr.models.log_event import LogEvent, detect_level
@@ -69,7 +71,15 @@ class LokiTailWorker(TailWorker):
 
         logger.info("Connecting to Loki: %s", ws_url)
 
-        async with websockets.connect(ws_url, additional_headers=extra_headers) as ws:
+        connect_options = {}
+        if ws_url.startswith("wss://"):
+            # Use the maintained CA bundle, including distrust updates, rather
+            # than inheriting an older operating-system root store.
+            connect_options["ssl"] = ssl.create_default_context(cafile=certifi.where())
+
+        async with websockets.connect(
+            ws_url, additional_headers=extra_headers, **connect_options
+        ) as ws:
             self.signals.status_changed.emit("connected")
             logger.info("Loki WebSocket connected")
 
